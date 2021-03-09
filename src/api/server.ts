@@ -1,8 +1,11 @@
 import axios from 'axios';
 
-export const SERVER_URL = process.env.REACT_APP_SERVER_URL ? 'https://micro-upload-server.herokuapp.com' : 'http://localhost:8080';
-export const MODE = process.env.REACT_APP_SERVER_URL ? 'production' : 'development';
+export const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+
 
 export default axios.create({
-  baseURL: `${SERVER_URL}/api/v1`
+  baseURL: `${SERVER_URL}/api/v1`,
+  headers: {
+    Authorization: 'Client-ID 8LUrgOkBh-zX9U2LO-QNUciRbDHF1HBwZdCp70bJdnE'
+  }
 });
