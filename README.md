@@ -19,13 +19,7 @@ yarn start
 ```
 
 ## TODO
-- [x] Upload home screen
-- [x] Upload loading screen
-- [x] Upload success screen
-- [ ] Write tests for app
-- [ ] Add redux or context api
-- [ ] Refactor code
-- [ ] Add transition between upload state
+
 
 ___
 ## Contributors
