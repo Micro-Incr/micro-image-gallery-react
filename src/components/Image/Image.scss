@@ -1,0 +1,36 @@
+.img-overlay{
+  .image-wrapper{
+    position: relative;
+    img{
+      transition: .5s all ease;
+      display: block;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+    p{
+      display: none;
+      font-size: 1.5rem;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      color: #fff;
+      transform: translateX(-50%);
+      font-weight: 600;
+    }
+    &:hover{
+      p{
+        display: block;
+      }
+      img {
+        opacity:0.6;
+      }
+    }
+
+  }
+  &:hover{
+    .image-wrapper{
+      background-color: #000000;
+    }
+  }
+}
