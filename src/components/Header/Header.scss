@@ -1,0 +1,33 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:  0 5%;
+  .left{
+    display: flex;
+    align-items: center;
+    .logo{
+      h3{
+        font-size: 1.5rem;
+        margin-bottom: -1rem;
+      }
+    }
+    input{
+      margin-left: 1.2rem;
+      padding: 1rem 0.5rem;
+    }
+  }
+  .right{
+    button{
+      background-color: #5aa469;
+      border: 0;
+      outline: 0;
+      color: #fff;
+      padding: 0.8rem 1.3rem;
+      border-radius: 0.8rem;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0px 0px 3px #556052 !important;
+    }
+  }
+}
