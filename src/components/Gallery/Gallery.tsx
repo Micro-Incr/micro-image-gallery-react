@@ -10,7 +10,7 @@ const Gallery = () => {
     const fetchData = async () => {
       const res = await Axios.get('https://api.unsplash.com/photos/');
       const data = res.data.map((img: any) => {
-        return { label: img.user.name, image: img.urls.raw };
+        return { label: img.user.name, image: img.urls.regular };
       });
       setImages(data);
     };
