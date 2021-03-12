@@ -19,7 +19,7 @@ yarn start
 ```
 
 ## TODO
-
+- [ ] Use upload function instead of add url
 
 ___
 ## Contributors
