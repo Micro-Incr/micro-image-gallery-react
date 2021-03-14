@@ -9,15 +9,12 @@ interface ImageInterface {
 const Image = (props: ImageInterface) => {
   const [span, setSpan] = useState<number>();
   const imageRef = useRef<HTMLImageElement>(null);
-  const loadImage = () => {
+  useEffect(() => {
     imageRef.current!.addEventListener('load', () => {
       const height = imageRef.current!.clientHeight;
       const span = Math.ceil(height / 10) + 1 ;
       setSpan(span);
     });
-  };
-  useEffect(() => {
-    setInterval(() => {loadImage();}, 5000);
   }, []);
   return (
     <div className={'img-overlay'} style={{ gridRowEnd: `span ${span}` }}>
