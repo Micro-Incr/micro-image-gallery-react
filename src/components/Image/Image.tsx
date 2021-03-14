@@ -14,7 +14,7 @@ const Image = (props: ImageInterface) => {
     imageRef.current.addEventListener('load', () => {
       // @ts-ignore
       const height = imageRef.current.clientHeight;
-      const span = Math.ceil(height / 10);
+      const span = Math.ceil(height / 10) + 1 ;
       setSpan(span);
     });
   }, []);
