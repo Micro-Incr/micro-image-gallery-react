@@ -2,18 +2,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:  0 5%;
+  padding: 0 5%;
+  @media(max-width: 800px){
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .left{
     display: flex;
     align-items: center;
+    @media(max-width: 800px){
+      margin-bottom: 0.5rem;
+    }
     .logo{
       h3{
         font-size: 1.5rem;
         margin-bottom: -1rem;
+        @media(max-width: 800px){
+          font-size: 1rem;
+        }
       }
     }
     input{
-      margin-left: 1.2rem;
+      margin: 0 1.2rem;
       padding: 1rem 0.5rem;
     }
   }
@@ -27,7 +37,11 @@
       border-radius: 0.8rem;
       font-size: 1rem;
       cursor: pointer;
-      box-shadow: 0px 0px 3px #556052 !important;
+      box-shadow: 0px 1px 4px #556052 !important;
+      @media(max-width: 800px){
+        font-size: 0.8rem;
+        width: 100%;
+      }
     }
   }
 }
