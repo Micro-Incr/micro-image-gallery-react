@@ -3,19 +3,24 @@ import Axios from './../../api/server';
 import Image from './../Image/Image';
 import './Gallery.scss';
 
-const Gallery = () => {
-  const [images, setImages] = useState<Blob[]>([]);
+interface GalleryInterface {
+  query: string
+};
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await Axios.get('https://api.unsplash.com/photos/');
-      const data = res.data.map((img: any) => {
+const Gallery = (props: GalleryInterface) => {
+  const [images, setImages] = useState<Blob[]>([]);
+  const fetchData = async () => {
+    const res = await Axios.get('https://api.unsplash.com/search/photos?query='+props.query);
+    if(res.data.results !== null){
+      const data = res.data.results.map((img: any) => {
         return { label: img.user.name, image: img.urls.regular };
       });
       setImages(data);
-    };
-    fetchData();
-  }, []);
+    }
+  };
+  useEffect(() => {
+    fetchData().then();
+  }, [props.query]);
 
   const mappedImages = images.map((image : any, index: number ) => {
     return <Image label={image.label} image={image.image}  key={index} />;

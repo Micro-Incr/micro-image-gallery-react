@@ -3,20 +3,21 @@ import './Image.scss';
 
 interface ImageInterface {
   label: string,
-  image: string
+  image: string,
 };
 
 const Image = (props: ImageInterface) => {
   const [span, setSpan] = useState<number>();
   const imageRef = useRef<HTMLImageElement>(null);
-  useEffect(() => {
-    // @ts-ignore
-    imageRef.current.addEventListener('load', () => {
-      // @ts-ignore
-      const height = imageRef.current.clientHeight;
+  const loadImage = () => {
+    imageRef.current!.addEventListener('load', () => {
+      const height = imageRef.current!.clientHeight;
       const span = Math.ceil(height / 10) + 1 ;
       setSpan(span);
     });
+  };
+  useEffect(() => {
+    setInterval(() => {loadImage();}, 5000);
   }, []);
   return (
     <div className={'img-overlay'} style={{ gridRowEnd: `span ${span}` }}>
